@@ -1,0 +1,35 @@
+[
+  {
+    "id": "electricity_001",
+    "topic": "electricity_billing",
+    "title": "Electricity Billing Complaint",
+    "content": "A consumer may use the relevant official electricity complaint mechanism to raise a billing-related complaint. The applicable procedure and authority should be verified against the current official source before providing instructions.",
+    "authority": "NEPRA",
+    "source_name": "NEPRA Consumer Services",
+    "source_url": "https://www.nepra.org.pk/",
+    "source_type": "official",
+    "verification_status": "reference_only"
+  },
+  {
+    "id": "electricity_002",
+    "topic": "high_bill",
+    "title": "High Electricity Bill",
+    "content": "A consumer who believes an electricity bill is incorrect should first review the bill details and use the applicable official complaint or customer-service channel. Specific procedures, deadlines, fees, and responsible offices must be confirmed from the current official source.",
+    "authority": "NEPRA",
+    "source_name": "NEPRA",
+    "source_url": "https://www.nepra.org.pk/",
+    "source_type": "official",
+    "verification_status": "reference_only"
+  },
+  {
+    "id": "electricity_003",
+    "topic": "electricity_distribution",
+    "title": "Distribution Company Services",
+    "content": "Electricity consumers normally interact with the relevant distribution company for customer-service matters. The responsible distribution company depends on the consumer's service area and should be identified before giving jurisdiction-specific instructions.",
+    "authority": "Distribution Company",
+    "source_name": "Relevant Electricity Distribution Company",
+    "source_url": "",
+    "source_type": "official",
+    "verification_status": "reference_only"
+  }
+]
