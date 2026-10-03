@@ -6,5 +6,4 @@ python-docx
 reportlab
 pillow
 pytesseract
-sentence-transformers
-numpy
+
