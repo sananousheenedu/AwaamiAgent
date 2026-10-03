@@ -23,9 +23,22 @@ def retrieve(query, storage_dir, top_k=3):
     results = []
 
     for index in top_indices:
+        entry = entries[index]
+
         results.append({
             "score": float(scores[index]),
-            "entry": entries[index]
+            "id": entry.get("id", ""),
+            "topic": entry.get("topic", ""),
+            "title": entry.get("title", ""),
+            "content": entry.get("content", ""),
+            "authority": entry.get("authority", ""),
+            "source_name": entry.get("source_name", ""),
+            "source_url": entry.get("source_url", ""),
+            "source_type": entry.get("source_type", ""),
+            "verification_status": entry.get(
+                "verification_status",
+                ""
+            )
         })
 
     return results
