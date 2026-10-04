@@ -263,12 +263,20 @@ Return ONLY valid JSON using exactly these six fields:
 }}
 
 Keep the response concise.
-
 User's civic problem:
 {problem if problem.strip() else "No problem description provided."}
 
 Uploaded document metadata:
 {document_metadata}
+
+Official civic source evidence:
+{rag_context if rag_context else "No matching official source evidence was found."}
+
+Important instruction:
+Use the official civic source evidence above whenever it is relevant.
+Do not invent laws, procedures, deadlines, fees, or departments.
+If the official evidence does not contain enough information, clearly say that
+the information should be verified with the relevant official authority.
 
 Uploaded document text:
 {document_text}
