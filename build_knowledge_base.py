@@ -8,8 +8,12 @@ from rag.vector_store import build_and_save_vector_store
 
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-DOWNLOAD_SCRIPT = os.path.join(BASE_DIR, "data", "download_sources.py")
-DOCUMENTS_DIR = os.path.join(BASE_DIR, "data", "documents")
+
+DOWNLOAD_SCRIPT = os.path.join(
+    BASE_DIR,
+    "data",
+    "download_sources.py"
+)
 
 
 def main():
@@ -49,14 +53,16 @@ def main():
     chunks = prepare_chunks(documents)
 
     if not chunks:
-        raise RuntimeError("No text chunks were created.")
+        raise RuntimeError(
+            "No text chunks were created."
+        )
 
     print(f"Created {len(chunks)} chunks.")
 
     # Step 4: Create FAISS vector database
     print("\n[4/4] Creating FAISS vector database...")
 
-    index, metadata = build_and_save_vector_store(chunks)
+    store = build_and_save_vector_store(chunks)
 
     print("\n" + "=" * 60)
     print("KNOWLEDGE BASE CREATED SUCCESSFULLY")
@@ -64,8 +70,8 @@ def main():
 
     print(f"Documents/pages: {len(documents)}")
     print(f"Text chunks:     {len(chunks)}")
-    print(f"FAISS vectors:   {index.ntotal}")
-    print(f"Metadata records:{len(metadata)}")
+    print(f"FAISS vectors:   {store.index.ntotal}")
+    print(f"Metadata records:{len(store.metadata)}")
 
     print("\nVector database location:")
     print("data/vector_store/")
