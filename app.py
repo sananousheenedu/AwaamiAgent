@@ -201,6 +201,27 @@ def analyze_civic_problem(
         document_text = "No document uploaded."
 
         document_metadata = "{}"
+            # ========================================================
+    # RAG RETRIEVAL
+    # ========================================================
+
+    rag_context = ""
+    rag_sources = []
+
+    try:
+        rag_result = query_civic_rag(
+            problem.strip(),
+            top_k=5
+        )
+
+        rag_context = rag_result.get("context", "")
+        rag_sources = rag_result.get("sources", [])
+
+    except Exception as e:
+        rag_context = ""
+        rag_sources = []
+
+        print(f"RAG retrieval error: {e}")
 
     prompt = f"""
 You are AwaamiAgent, an AI civic assistance system.
