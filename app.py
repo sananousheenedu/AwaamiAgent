@@ -62,6 +62,25 @@ if not api_key:
 
 
 client = Groq(api_key=api_key)
+# ============================================================
+# RAG KNOWLEDGE BASE
+# ============================================================
+
+@st.cache_resource
+def load_rag_knowledge_base():
+    return ensure_knowledge_base()
+
+
+try:
+    rag_status = load_rag_knowledge_base()
+
+except Exception as e:
+    rag_status = None
+    st.warning(
+        "Official civic knowledge base could not be loaded yet. "
+        "AwaamiAgent will continue without RAG grounding."
+    )
+    st.caption(f"RAG technical error: {str(e)}")
 
 # ============================================================
 # DOCUMENT EXTRACTION
