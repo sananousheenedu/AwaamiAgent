@@ -4,6 +4,8 @@ import json
 import re
 import io
 import streamlit as st
+from rag.knowledge_base import ensure_knowledge_base
+from rag.rag_pipeline import query_civic_rag
 from groq import Groq
 from pypdf import PdfReader
 from PIL import Image
